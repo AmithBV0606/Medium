@@ -1,7 +1,8 @@
 import { Hono } from "hono";
-import authMiddleware from "../Middlewares/AuthMiddleware";
+import authMiddleware from "../Middlewares/authMiddleware";
 import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
+import { createBlogInput, updateBlogInput } from "@amith_rao/medium-common";
 
 const blogRouter = new Hono<{
   Bindings: {
@@ -22,6 +23,15 @@ blogRouter.post("/", async (c) => {
   }).$extends(withAccelerate());
 
   const body = await c.req.json();
+
+  const { success } = createBlogInput.safeParse(body);
+
+  if (!success) {
+    c.status(411);
+    return c.json({
+      message: "Invalid input"
+    });
+  }
 
   const authorId = c.get("userId");
 
@@ -46,6 +56,15 @@ blogRouter.put("/", async (c) => {
   }).$extends(withAccelerate());
 
   const body = await c.req.json();
+
+  const { success } = updateBlogInput.safeParse(body);
+
+  if (!success) {
+    c.status(411);
+    return c.json({
+      message: "Invalid input"
+    });
+  }
 
   const updateBlogPost = await prisma.post.update({
     where: {

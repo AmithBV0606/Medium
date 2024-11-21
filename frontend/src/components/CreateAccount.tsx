@@ -5,7 +5,7 @@ import { SignupInput } from "@amith_rao/medium-common";
 import Button from "./Button";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
-import Loader from "./Loader";
+import Loader from "../Loaders/Loader";
 
 type AuthType = {
   type: "signup" | "signin";
@@ -32,10 +32,12 @@ function CreateAccount({ type }: AuthType) {
       );
       const token = response.data.jwt;
       localStorage.setItem("token", token);
-      navigate("/blog");
-      setLoading(false)
+      navigate("/blogs");
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       alert("Error while Signing In/Signing Up");
+      navigate(type === "signin" ? "/signin": "/signup");
     }
   };
 

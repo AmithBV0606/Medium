@@ -29,7 +29,7 @@ blogRouter.post("/", async (c) => {
   if (!success) {
     c.status(411);
     return c.json({
-      message: "Invalid input"
+      message: "Invalid input",
     });
   }
 
@@ -62,7 +62,7 @@ blogRouter.put("/", async (c) => {
   if (!success) {
     c.status(411);
     return c.json({
-      message: "Invalid input"
+      message: "Invalid input",
     });
   }
 
@@ -86,27 +86,32 @@ blogRouter.put("/", async (c) => {
 
 // Feature to add : pagination
 blogRouter.get("/bulk", async (c) => {
-    const prisma = new PrismaClient({
-      datasourceUrl: c.env?.DATABASE_URL,
-    }).$extends(withAccelerate());
-  
-    const allBlogPost = await prisma.post.findMany({
-      select:{
+  const prisma = new PrismaClient({
+    datasourceUrl: c.env?.DATABASE_URL,
+  }).$extends(withAccelerate());
+
+  try {
+    const blogs = await prisma.post.findMany({
+      select: {
         id: true,
         title: true,
         content: true,
         createdAt: true,
         user: {
-          select:{
-            name: true
-          }
-        }
-      }
+          select: {
+            name: true,
+          },
+        },
+      },
     });
-    
     return c.json({
-      blogs: allBlogPost,
+      blogs
     });
+  } catch (error) {
+    console.error("Error fetching blogs:", error);
+    c.status(500);
+    return c.json({ message: "Internal Server Error" });
+  }
 });
 
 // 4) To get the specific blog post :
@@ -122,10 +127,21 @@ blogRouter.get("/:id", async (c) => {
       where: {
         id: id,
       },
+      select: {
+        id: true,
+        title: true,
+        content: true,
+        createdAt: true,
+        user: {
+          select:{
+            name:true
+          }
+        }
+      }
     });
 
     return c.json({
-      Blog: getBlogPost,
+      getBlogPost,
     });
   } catch (error) {
     c.status(411);

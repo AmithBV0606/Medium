@@ -22,11 +22,12 @@ model User {
 }
 
 model Post {
-  id        String  @id @default(uuid())
+  id        String   @id @default(uuid())
   authorId  String
   title     String
   content   String
-  published Boolean @default(false)
+  createdAt DateTime @default(now())
+  published Boolean  @default(false)
 
   user User @relation(fields: [authorId], references: [id]) // Every blog created will have the reference to the User(author)
 }

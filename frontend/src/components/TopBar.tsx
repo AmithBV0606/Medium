@@ -2,8 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Avatar from "./Avatar";
 import { BACKEND_URL } from "../config";
 import axios from "axios";
-import { useState } from "react";
-import SkeletonLoader2 from "../Loaders/SkeletonLoader2";
 
 type TopBarType = {
   type : "createBlogs" | "Publish";
@@ -12,8 +10,6 @@ type TopBarType = {
 }
 
 function TopBar({ type, title, content }: TopBarType) {
-  const [loading, setLoading] = useState<boolean>(true);
-
   const navigate = useNavigate();
 
   const registerPost = async () => {
@@ -29,9 +25,7 @@ function TopBar({ type, title, content }: TopBarType) {
       const data = response.data;
       const id = data.id;
       navigate(`/blog/${id}`);
-      setLoading(false);
     } catch (error) {
-      setLoading(false);
       alert("Error while posting the blog post, please try re-posting your blog!");
       navigate(`/publish`);
     }

@@ -2,7 +2,7 @@ function SkeletonLoader1() {
   return (
     <div role="status" className="animate-pulse my-28">
       {/* Skeleton - 1 */}
-      <div className="flex items-center justify-center mt-4 -ml-[360px]">
+      <div className="flex items-center justify-center mt-4 -ml-[760px]">
         <svg
           className="w-8 h-8 text-gray-200 me-4"
           aria-hidden="true"
@@ -16,14 +16,14 @@ function SkeletonLoader1() {
         <div className="w-24 h-2 bg-gray-200 rounded-full"></div>
       </div>
 
-      <div className="h-2 bg-gray-300 rounded-full max-w-[600px] mt-4 mx-auto"></div>
-      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[600px] mt-4"></div>
-      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[600px] mt-4"></div>
-      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[600px] mt-4"></div>
-      <div className="w-24 h-2 bg-gray-200 rounded-full mx-auto mt-4 ml-[420px] mb-14"></div>
+      <div className="h-2 bg-gray-300 rounded-full max-w-[1000px] mt-4 mx-auto"></div>
+      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[1000px] mt-4"></div>
+      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[1000px] mt-4"></div>
+      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[1000px] mt-4"></div>
+      <div className="w-24 h-2 bg-gray-200 rounded-full mx-auto mt-4 ml-[211px] mb-14"></div>
 
       {/* Skeleton - 2 */}
-      <div className="flex items-center justify-center mt-4 -ml-[360px]">
+      <div className="flex items-center justify-center mt-4 -ml-[760px]">
         <svg
           className="w-8 h-8 text-gray-200 me-4"
           aria-hidden="true"
@@ -37,14 +37,14 @@ function SkeletonLoader1() {
         <div className="w-24 h-2 bg-gray-200 rounded-full"></div>
       </div>
 
-      <div className="h-2 bg-gray-300 rounded-full max-w-[600px] mt-4 mx-auto"></div>
-      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[600px] mt-4"></div>
-      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[600px] mt-4"></div>
-      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[600px] mt-4"></div>
-      <div className="w-24 h-2 bg-gray-200 rounded-full mx-auto mt-4 ml-[420px] mb-14"></div>
+      <div className="h-2 bg-gray-300 rounded-full max-w-[1000px] mt-4 mx-auto"></div>
+      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[1000px] mt-4"></div>
+      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[1000px] mt-4"></div>
+      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[1000px] mt-4"></div>
+      <div className="w-24 h-2 bg-gray-200 rounded-full mx-auto mt-4 ml-[211px] mb-14"></div>
 
       {/* Skeleton - 3 */}
-      <div className="flex items-center justify-center mt-4 -ml-[360px]">
+      <div className="flex items-center justify-center mt-4 -ml-[760px]">
         <svg
           className="w-8 h-8 text-gray-200 me-4"
           aria-hidden="true"
@@ -58,11 +58,11 @@ function SkeletonLoader1() {
         <div className="w-24 h-2 bg-gray-200 rounded-full"></div>
       </div>
 
-      <div className="h-2 bg-gray-300 rounded-full max-w-[600px] mt-4 mx-auto"></div>
-      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[600px] mt-4"></div>
-      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[600px] mt-4"></div>
-      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[600px] mt-4"></div>
-      <div className="w-24 h-2 bg-gray-200 rounded-full mx-auto mt-4 ml-[420px] mb-14"></div>
+      <div className="h-2 bg-gray-300 rounded-full max-w-[1000px] mt-4 mx-auto"></div>
+      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[1000px] mt-4"></div>
+      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[1000px] mt-4"></div>
+      <div className="h-2 mx-auto bg-gray-300 rounded-full max-w-[1000px] mt-4"></div>
+      <div className="w-24 h-2 bg-gray-200 rounded-full mx-auto mt-4 ml-[211px] mb-14"></div>
     </div>
   );
 }

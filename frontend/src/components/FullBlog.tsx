@@ -6,7 +6,7 @@ import TopBar from "./TopBar";
 function FullBlog({ blog }: { blog: BlogPropType }) {
   return (
     <div>
-      <TopBar />
+      <TopBar  type="createBlogs"/>
       <div className="grid grid-cols-12 px-32 w-full mt-14">
         <div className="col-span-8 space-y-2 px-4">
           <div className="text-4xl font-bold">{blog.title}</div>

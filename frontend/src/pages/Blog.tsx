@@ -10,7 +10,7 @@ function Blog() {
 
   if (loading || !blog) {
     return <div>
-        <TopBar />
+        <TopBar type={"createBlogs"}/>
     
         <div className="h-screen flex flex-col justify-start mt-14">
             

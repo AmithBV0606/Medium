@@ -15,12 +15,17 @@ function Blogs() {
   const { loading, blogs } = useBlogs();
 
   if (loading) {
-    return <SkeletonLoader1 />;
+    return (
+      <div>
+        <TopBar type={"createBlogs"}/>
+        <SkeletonLoader1 />
+      </div>
+    );
   }
 
   return (
     <div className="bg-gray-50">
-      <TopBar />
+      <TopBar type={"createBlogs"}/>
 
       <div className="flex justify-center">
         <div className="mx-6 md:max-w-4xl">

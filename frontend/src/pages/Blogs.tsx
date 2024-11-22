@@ -3,11 +3,13 @@ import SkeletonLoader1 from "../Loaders/SkeletonLoader1";
 import TopBar from "../components/TopBar";
 import { useBlogs } from "../hooks/useBlogs";
 
-const convertDate = (time: string) => {
+export const convertDate = (time: string) => {
   const date = new Date(time);
-  const formattedDate = date.toLocaleDateString("en-GB"); 
+  const options = { month: "short", day: "2-digit", year: "numeric" };
+  // @ts-ignore
+  const formattedDate = date.toLocaleDateString("en-US", options);
   return formattedDate;
-}
+};
 
 function Blogs() {
   const { loading, blogs } = useBlogs();
@@ -19,7 +21,7 @@ function Blogs() {
   return (
     <div className="bg-gray-50">
       <TopBar />
-      
+
       <div className="flex justify-center">
         <div className="mx-6 md:max-w-4xl">
           {blogs.map((blog) => (

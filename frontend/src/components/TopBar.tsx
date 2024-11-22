@@ -4,37 +4,48 @@ import { BACKEND_URL } from "../config";
 import axios from "axios";
 
 type TopBarType = {
-  type : "createBlogs" | "Publish";
-  title? : string;
-  content? : string;
-}
+  type: "createBlogs" | "Publish";
+  title?: string;
+  content?: string;
+};
 
 function TopBar({ type, title, content }: TopBarType) {
   const navigate = useNavigate();
 
   const registerPost = async () => {
     try {
-      const response = await axios.post(`${BACKEND_URL}/api/v1/blog`, {
-        title,
-        content
-      }, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+      const response = await axios.post(
+        `${BACKEND_URL}/api/v1/blog`,
+        {
+          title,
+          content,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
-      });
+      );
       const data = response.data;
       const id = data.id;
       navigate(`/blog/${id}`);
     } catch (error) {
-      alert("Error while posting the blog post, please try re-posting your blog!");
+      alert(
+        "Error while posting the blog post, please try re-posting your blog!"
+      );
       navigate(`/publish`);
     }
-  }
+  };
 
   return (
     <div className="border-b-2 flex justify-between items-center px-10 py-3">
-      <div className="text-xl font-semibold cursor-pointer">
-        <Link to={"/blogs"}>Medium</Link>
+      <div className="text-4xl font-semibold cursor-pointer flex items-center gap-4">
+        <img
+          src="../public/favicon-32x32.png"
+          alt="icon"
+          className="w-10 h-10"
+        />
+        <Link to={"/blogs"}>Scribe</Link>
       </div>
 
       <div className="flex justify-center items-start gap-10">

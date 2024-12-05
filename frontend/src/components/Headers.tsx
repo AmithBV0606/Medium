@@ -1,12 +1,16 @@
-import React from 'react';
-import { Github } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Github } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Header: React.FC = () => {
   return (
     <header className="bg-gray-800 text-gray-200 px-4 lg:px-6 h-16 flex items-center">
       <div className="font-bold text-4xl flex gap-4">
-        <img src="../public/favicon-32x32.png" alt="icon" className='w-10 h-10' />
+        <img
+          src="../public/favicon-32x32.png"
+          alt="icon"
+          className="w-10 h-10"
+        />
         Scribe
       </div>
 
@@ -15,7 +19,7 @@ export const Header: React.FC = () => {
           to={"https://github.com/AmithBV0606/Medium"}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-200 border border-gray-200 px-4 py-2 rounded hover:bg-gray-600 flex items-center bg-[#111827]"
+          className="text-gray-200 border border-gray-200 px-4 py-2 rounded hover:bg-gray-600 hidden md:flex md:items-center bg-[#111827]"
         >
           <Github className="w-5 h-5 mr-2" />
           View on GitHub
@@ -30,7 +34,7 @@ export const Header: React.FC = () => {
 
         <Link
           to={"/signup"}
-          className="bg-gray-200 text-black border-4 border-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-4 py-2 rounded hover:bg-gray-300"
+          className="bg-gray-200 text-black border-4 border-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-4 py-2 rounded hover:bg-gray-300 hidden md:block"
         >
           Sign Up
         </Link>

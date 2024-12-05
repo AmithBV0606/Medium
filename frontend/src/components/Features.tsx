@@ -8,6 +8,7 @@ export const Features: React.FC = () => {
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-gray-100">
           Key Features
         </h2>
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {

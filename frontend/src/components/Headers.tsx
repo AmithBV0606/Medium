@@ -7,7 +7,7 @@ export const Header: React.FC = () => {
     <header className="bg-gray-800 text-gray-200 px-4 lg:px-6 h-16 flex items-center">
       <div className="font-bold text-4xl flex gap-4">
         <img
-          src="../public/favicon-32x32.png"
+          src="/favicon-32x32.png"
           alt="icon"
           className="w-10 h-10"
         />

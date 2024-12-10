@@ -41,7 +41,7 @@ function TopBar({ type, title, content }: TopBarType) {
     <div className="border-b-2 flex justify-between items-center px-10 py-3">
       <div className="text-4xl font-semibold cursor-pointer flex items-center gap-4">
         <img
-          src="../public/favicon-32x32.png"
+          src="frontend/public/favicon-32x32.png"
           alt="icon"
           className="w-10 h-10"
         />

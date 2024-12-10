@@ -40,15 +40,11 @@ function TopBar({ type, title, content }: TopBarType) {
   return (
     <div className="border-b-2 flex justify-between items-center px-10 py-3">
       <div className="text-4xl font-semibold cursor-pointer flex items-center gap-4">
-        <img
-          src="/favicon-32x32.png"
-          alt="icon"
-          className="w-10 h-10"
-        />
+        <img src="/favicon-32x32.png" alt="icon" className="w-10 h-10" />
         <Link to={"/blogs"}>Scribe</Link>
       </div>
 
-      <div className="flex justify-center items-start gap-10">
+      <div className="flex justify-center items-start gap-4">
         {type === "createBlogs" ? (
           <Link to={"/publish"}>
             <button
@@ -69,6 +65,17 @@ function TopBar({ type, title, content }: TopBarType) {
             Publish post
           </button>
         ) : null}
+
+        <button
+          type="button"
+          className="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+          onClick={() => {
+            localStorage.clear();
+            navigate("/");
+          }}
+        >
+          Logout
+        </button>
 
         <Avatar name="Amith" />
       </div>
